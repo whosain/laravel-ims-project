@@ -1,0 +1,91 @@
+.contoh ul
+{
+width: 1380px;
+margin: auto;
+height: 74px;
+position: static;
+overflow: visible;
+}
+.contoh ul li
+{
+list-style:none;
+float:left;
+font-size: 18px;
+margin-top:18px;
+padding:7px;
+width:16px;
+margin-left:3px;
+color:#000;
+}
+.contoh ul li:nth-of-type(1)
+{
+top:40px;
+left:10px;
+background: #0b7c9c;
+-webkit-transform: rotate(5deg);
+-moz-transform: rotate(5deg);
+}
+.contoh ul li:nth-of-type(2)
+{
+top:40px;
+left:55px;
+background:#0e98c0;
+-webkit-transform: rotate(10deg);
+-moz-transform: rotate(10deg);
+}
+.contoh ul li:nth-of-type(3)
+{
+top:40px
+left:100px;
+background: #35bfe7;
+-webkit-transform: rotate(15deg);
+-moz-transform: rotate(15deg);
+}
+.contoh ul li:nth-of-type(4)
+{
+top:40px;
+left:145px;
+background: #6acdea;
+-webkit-transform: rotate(25deg);
+-moz-transform: rotate(25deg);
+}
+.contoh ul li:nth-of-type(5)
+{
+top:40px;
+left:190px;
+background: #7ee0fc;
+-webkit-transform: rotate(30deg);
+-moz-transform: rotate(30deg);
+}
+.contoh ul li:nth-of-type(6)
+{
+top:50px;
+left:233px;
+background: #45e8fb;
+-webkit-transform: rotate(40deg);
+-moz-transform: rotate(35deg);
+}
+.contoh ul li:nth-of-type(7)
+{
+top:55px;
+left:280px;
+background: #8cd4eb;
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+}
+.contoh ul li:nth-of-type(8)
+{
+top:58px;
+left:330px;
+background: #19bae9;
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+}
+.contoh ul li:nth-of-type(9)
+{
+top:58px;
+left:383px;
+background: #1fb0da;
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+}
