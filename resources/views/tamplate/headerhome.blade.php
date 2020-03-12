@@ -140,10 +140,10 @@
                                 <span class="label label-primary pull-right">4</span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="top-nav.html"><i class="fa fa-circle-o"></i> Master Departemen</a></li>
-                                <li><a href="boxed.html"><i class="fa fa-circle-o"></i> Master Company</a></li>
-                                <li><a href="fixed.html"><i class="fa fa-circle-o"></i> Master Aplication</a></li>
-                                <li class="active"><a href="collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Master User</a></li>
+                                <li><a href="{{ url('/jenis') }}"><i class="fa fa-circle-o"></i> Master Jenis</a></li>
+                                <li><a href="{{ url('/lokasi') }}"><i class="fa fa-circle-o"></i> Master Lokasi</a></li>
+                                <li><a href="{{ url('/vendor') }}"><i class="fa fa-circle-o"></i> Master Vendor</a></li>
+                                <li><a href="collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Master User</a></li>
                             </ul>
                         </li>
                     </ul>
