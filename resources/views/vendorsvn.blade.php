@@ -2,11 +2,11 @@
     <div class="content-wrapper" style="min-height: 1200px;">
       <section class="content">
 
-        <div class="box box-solid box-info box collapsed-box" >
+        <div class="box box-solid  box collapsed-box" >
           <div class="box-header with-border">
             <h3 class="box-title"><b>Tambah Vendor</b></h3>
             <div class="box-tools pull-right">
-              <button class="btn btn-info btn-xs" data-widget="collapse" ><i class="fa fa-plus"></i></button>
+              <button class="btn  btn-xs" data-widget="collapse" ><i class="fa fa-plus"></i></button>
             </div>
           </div>
           <div class="box-body" style="display: block;">
@@ -62,11 +62,11 @@
         </div>
 
 
-        <div class="box box-solid box-info">
+        <div class="box box-solid ">
           <div class="box-header with-border">
             <h3 class="box-title"><b>List Vendor</b></h3>
             <div class="box-tools pull-right">
-              <button class="btn btn-info btn-xs" data-widget="collapse" ><i class="fa fa-plus"></i></button>
+              <button class="btn btn-xs" data-widget="collapse" ><i class="fa fa-plus"></i></button>
             </div>
           </div>
           <div class="box-body" style="display: block;">

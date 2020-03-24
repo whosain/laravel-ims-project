@@ -4,7 +4,7 @@
 
           <div class="box collapsed-box">
             <div class="box-header with-border">
-              <h3 class="box-title">Tambah Lokasi</h3>
+              <h3 class="box-title">Tambah STB</h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse"><i class="fa fa-minus"></i></button>
                 <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove"><i class="fa fa-times"></i></button>
@@ -15,26 +15,31 @@
                 <div class="box-body" id="collapse_form">
                   <div class="form-group has-feedback">
                     <div class="col-md-4">
-                      <label>Company  Name</label>
-                      <select name="company" id="company" class="form-control input-sm" required >
+                      <label>Vendor  Name</label>
+                      <select name="vendor" id="vendor" class="form-control input-sm" required >
                         <option value="">Select One...</option>
-                        @foreach($company as $item)
-                          <option value="{{$item->id}}">{{$item->company_name}}</option>
+                        @foreach($vendor as $item)
+                          <option value="{{$item->id}}">{{$item->name}}</option>
                         @endforeach
                       </select>
                     </div>
                     <div class="col-md-4">
-                      <label>Building Name</label>
-                      <select name="building" id="building" class="form-control input-sm" required >
-                        <option value="">Select One...</option>
-                        @foreach($building as $item)
-                          <option value="{{$item->id}}">{{$item->building_name}}</option>
-                        @endforeach
-                      </select>
+                      <label>Recevide Date</label>
+                      <input type="text" class="form-control" name="received" id="received"  placeholder="Recevide Date">
                     </div>
                     <div class="col-md-4">
-                      <label>Nama Lokasi</label>
-                      <input type="text" class="form-control" name="nama_lok"  placeholder="Nama Lokasi">
+                      <label>Stock Balance</label>
+                      <input type="number" class="form-control" name="stock" id="stock"  placeholder="Stock Balance">
+                    </div>
+                  </div>
+                  <div class="form-group has-feedback">
+                    <div class="col-md-4">
+                      <label>Judul</label>
+                      <textarea class="form-control" name="judul" id="judul" rows="3" placeholder="Enter ..."></textarea>
+                    </div>
+                    <div class="col-md-4">
+                      <label>Keterangan</label>
+                      <textarea class="form-control" name="ket" id="ket" rows="3" placeholder="Enter ..."></textarea>
                     </div>
                   </div>
                   <div class="form-group has-feedback">
@@ -52,7 +57,7 @@
 
         <div class="box ">
           <div class="box-header with-border">
-            <h3 class="box-title"><b>List Lokasi</b></h3>
+            <h3 class="box-title"><b>List STB</b></h3>
             <div class="box-tools pull-right">
               <button class="btn  btn-xs" data-widget="collapse" ><i class="fa fa-plus"></i></button>
             </div>
@@ -63,9 +68,11 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Company Name</th>
-                    <th>Building Name</th>
-                    <th>Lokasi</th>
+                    <th>Vendor Name</th>
+                    <th>Received Date</th>
+                    <th>Judul</th>
+                    <th>Keterangan</th>
+                    <th>Stock Balance</th>
                     <th style="width:125px;">Action</th>
                   </tr>
                 </thead>
@@ -93,32 +100,36 @@
       </div>
       <div class="modal-body">
         <form action="#" id="formedit" class="form-horizontal">
-          
-            <div class="form-group has-feedback">
-              <input type="hidden" name="id" id="id">
-              <div class="col-md-4">
-                <label>Company  Name</label>
-                <select name="company" id="companye" class="form-control input-sm" required >
-                  <option value="">Select One...</option>
-                  @foreach($company as $item)
-                    <option value="{{$item->id}}">{{$item->company_name}}</option>
-                  @endforeach
-                </select>
-              </div>
-              <div class="col-md-4">
-                <label>Building Name</label>
-                <select name="building" id="buildinge" class="form-control input-sm" required >
-                  <option value="">Select One...</option>
-                  @foreach($building as $item)
-                    <option value="{{$item->id}}">{{$item->building_name}}</option>
-                  @endforeach
-                </select>
-              </div>
-              <div class="col-md-4">
-                <label>Nama Lokasi</label>
-                <input type="text" class="form-control" id="nama_lok" name="nama_lok"  placeholder="Nama Lokasi">
-              </div>
+          <div class="form-group has-feedback">
+            <input type="hidden" name="id" id="id">
+            <div class="col-md-4">
+              <label>Vendor  Name</label>
+              <select name="vendor" id="vendore" class="form-control input-sm" required >
+                <option value="">Select One...</option>
+                @foreach($vendor as $item)
+                  <option value="{{$item->id}}">{{$item->name}}</option>
+                @endforeach
+              </select>
             </div>
+            <div class="col-md-4">
+              <label>Recevide Date</label>
+              <input type="text" class="form-control" name="received" id="receivede"  placeholder="Recevide Date">
+            </div>
+            <div class="col-md-4">
+              <label>Stock Balance</label>
+              <input type="number" class="form-control" name="stock" id="stocke"  placeholder="Stock Balance">
+            </div>
+          </div>
+          <div class="form-group has-feedback">
+            <div class="col-md-4">
+              <label>Judul</label>
+              <textarea class="form-control" name="judul" id="judule" rows="3" placeholder="Enter ..."></textarea>
+            </div>
+            <div class="col-md-4">
+              <label>Keterangan</label>
+              <textarea class="form-control" name="ket" id="kete" rows="3" placeholder="Enter ..."></textarea>
+            </div>
+          </div>
         </form>
         <div class="box-footer">
           <button type="submit" class="btn btn-primary" id="saveBtn" value="create">Save changes</button>
@@ -136,20 +147,29 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
           }
         });
+        
 
         $(function () {
     
           var table = $('#table').DataTable({
               processing: true,
               serverSide: true,
-              ajax: "{{ route('lok.index') }}",
+              ajax: "{{ route('stb.index') }}",
               columns: [
                 {data: 'id', name: 'id'},
-                {data: 'company_name', name: 'company_name'},
-                {data: 'building_name', name: 'building_name'},
-                {data: 'nama_lokasi', name: 'nama_lokasi'},
+                {data: 'name', name: 'name'},
+                {data: 'date', name: 'date'},
+                {data: 'judul', name: 'judul'},
+                {data: 'keterangan', name: 'keterangan'},
+                {data: 'stock_balance', name: 'stock_balance'},
                 {data: 'action', name: 'action'},
               ]
+          });
+
+          $( "#received" ).datepicker({
+            dateFormat: 'yy-mm-dd',
+            autoclose: true,
+            todayHighlight: true,
           });
           
         });
@@ -158,7 +178,7 @@
           
           /*alert($('#form1').serialize());
           return false;*/
-          var ajaxurl = 'insertlok';
+          var ajaxurl = 'insertstb';
           $.ajax({
             url : ajaxurl,
             type: "POST",
@@ -183,15 +203,17 @@
 
         $('body').on('click', '.editProduct', function () {
           var id = $(this).data('id');
-          $.get("{{ route('lok_view.index') }}" +'/' + id +'/edit', function (data) {
+          $.get("{{ route('stb_view.index') }}" +'/' + id +'/edit', function (data) {
               $('.modal-dialog').css({width:'90%',height:'auto', 'max-height':'100%'});
-              $('#modelHeading').html("Edit Lokasi");
+              $('#modelHeading').html("Edit STB");
               $('#saveBtn').val("edit-user");
               $('#ajaxModel').modal('show');
               $('#id').val(data.id);
-              $('#companye').val(data.company_id);
-              $('#buildinge').val(data.building_id);
-              $('#nama_lok').val(data.nama_lokasi);
+              $('#vendore').val(data.vendor_id);
+              $('#receivede').val(data.received_date);
+              $('#stocke').val(data.stock_balance);
+              $('#judule').val(data.judul);
+              $('#kete').val(data.keterangan);
           })
         });
 
@@ -205,7 +227,7 @@
           
           $.ajax({
             data: $('#formedit').serialize(),
-            url: "{{ route('lok_upd.store') }}",
+            url: "{{ route('stb_upd.store') }}",
             type: "POST",
             dataType: 'json',
             success: function (data) {
@@ -230,7 +252,7 @@
         
           $.ajax({
               type: "DELETE",
-              url: "{{ route('lok_del.store') }}"+'/'+id,
+              url: "{{ route('stb_del.store') }}"+'/'+id,
               success: function (data) {
                   $('#table').DataTable().ajax.reload();
               },
