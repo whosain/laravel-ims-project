@@ -157,8 +157,8 @@
                             <ul class="treeview-menu">
                                 <li><a href="{{ url('/jenis') }}"><i class="fa fa-circle-o"></i> Asset Atlasat</a></li>
                                 <li><a href="{{ url('/lokasi') }}"><i class="fa fa-circle-o"></i> Asset SCN</a></li>
-                                <li><a href="{{ url('/stb') }}"><i class="fa fa-circle-o"></i> Asset STB Header</a></li>
-                                <li><a href="{{ url('/stbdetail') }}"><i class="fa fa-circle-o"></i> Asset STB Detail</a></li>
+                                <li><a href="{{ url('/stb') }}"><i class="fa fa-circle-o"></i> Asset STB</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Tracking STB</a></li>
                             </ul>
                         </li>
                     </ul>

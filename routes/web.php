@@ -22,7 +22,8 @@ Route::get('/jenis','JenisController@index');
 Route::get('/vendor','VendorSvnController@index');
 Route::get('/lokasi','LokasiController@index');
 Route::get('/stb','StbController@index');
-Route::get('/stbdetail','StbDetailController@index');
+Route::get('/stbdetail/{id}','StbDetailController@stbdetail');
+Route::get('/edit','StbDetailController@index');
 
 
 //route form master datatables

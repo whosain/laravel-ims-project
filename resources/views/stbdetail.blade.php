@@ -1,4 +1,11 @@
 	@include('tamplate.headerhome')
+  <style type="text/css">
+    .pagination li{
+      float: left;
+      list-style-type: none;
+      margin:5px;
+    }
+  </style>
     <div class="content-wrapper" style="min-height: 1200px;">
       <section class="content">
 
@@ -11,26 +18,50 @@
           </div>
           <div class="box-body" style="display: block;">
             <div class="table table-bordered table-hover" style="background:#eeeeee;">
-              <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Vendor Name</th>
-                    <th>Product Model</th>
-                    <th>Purchase Date</th>
-                    <th>Mac Address</th>
-                    <th>Serial Number</th>
-                    <th style="width:125px;">Action</th>
-                  </tr>
+              <table border="1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                 <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Vendor Name</th>
+                  <th>Product Model</th>
+                  <th>Purchase Date</th>
+                  <th>Mac Address</th>
+                  <th>Serial Number</th>
+                  <th style="width:125px;">Action</th>
+                </tr>
                 </thead>
                 <tbody>
-
+                  @foreach($pegawai as $p)
+                  <tr>
+                    <td>{{ $p->id }}</td>
+                    <td>{{ $p->name }}</td>
+                    <td>{{ $p->product_model }}</td>
+                    <td>{{ $p->date }}</td>
+                    <td>{{ $p->mac_address }}</td>
+                    <td>{{ $p->serial_number }}</td>
+                    <td>
+                      <div class="btn-group">
+                        
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="javascript:void(0)" data-toggle="tooltip"  data-id="{{ $p->id }}" data-original-title="Edit" class="edit btn btn-primary btn-sm editProduct">Edit</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
                 </tbody>
-
-                <tfoot>
-
-                </tfoot>
+                @endforeach
               </table>
+              {{ $pegawai->links() }}
+              <br/>
+              Halaman : {{ $pegawai->currentPage() }} <br/>
+              Jumlah Data : {{ $pegawai->total() }} <br/>
+              Data Per Halaman : {{ $pegawai->perPage() }} <br/>
+
+              
             </div>
           </div><!-- /.box-body -->
         </div>
@@ -49,25 +80,6 @@
         <form action="#" id="formedit" class="form-horizontal">
           <div class="form-group has-feedback">
             <input type="hidden" name="id" id="id">
-            <div class="col-md-4">
-              <label>Vendor  Name</label>
-              <select name="vendor" id="vendore" class="form-control input-sm" required >
-                <option value="">Select One...</option>
-                @foreach($vendor as $item)
-                  <option value="{{$item->id}}">{{$item->name}}</option>
-                @endforeach
-              </select>
-            </div>
-            <div class="col-md-4">
-              <label>Purchase Date</label>
-              <input type="text" class="form-control" name="purchase" id="purchase"  placeholder="Recevide Date">
-            </div>
-            <div class="col-md-4">
-              <label>Product Model</label>
-              <input type="text" class="form-control" name="product" id="product"  placeholder="Stock Balance">
-            </div>
-          </div>
-          <div class="form-group has-feedback">
             <div class="col-md-4">
               <label>Mac Address</label>
               <input type="text" class="form-control" name="mac" id="mac"  placeholder="Mac Address">
@@ -150,6 +162,7 @@
 
         $('body').on('click', '.editProduct', function () {
           var id = $(this).data('id');
+         
           $.get("{{ route('stbdetail_view.index') }}" +'/' + id +'/edit', function (data) {
               $('.modal-dialog').css({width:'90%',height:'auto', 'max-height':'100%'});
               $('#modelHeading').html("Edit STB");
@@ -182,6 +195,7 @@
                 $('#formedit').trigger("reset");
                 $('#ajaxModel').modal('hide');
                 $('#table').DataTable().ajax.reload();
+                location.reload();
            
             },
             error: function (data) {

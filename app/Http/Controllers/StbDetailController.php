@@ -38,11 +38,25 @@ class StbDetailController extends Controller
     }
 
 
+    public function stbdetail($id)
+    {
+        // mengambil data pegawai berdasarkan id yang dipilih
+        $pegawai =DB::table('stb_detail')
+                    ->join('master_vendor_svn', 'stb_detail.vendor_id', '=', 'master_vendor_svn.id')
+                    ->where('stb_detail.stb_id', $id)
+                    ->select('stb_detail.id','master_vendor_svn.name',DB::raw('DATE_FORMAT(stb_detail.purchase_date, "%d-%m-%Y") as date'), 'stb_detail.product_model','stb_detail.mac_address','stb_detail.serial_number','stb_detail.remarks','stb_detail.status')
+                    ->paginate(10);
+        // passing data pegawai yang didapat ke view edit.blade.php\
+        $dataven['vendor'] = DB::select('select * from master_vendor_svn');
+        return view('stbdetail',['pegawai' => $pegawai])->with($dataven);
+    }
+
+
 	public function store(Request $request)
     {
 
         ModelStbDetail::updateOrCreate(['id' => $request->id],
-                ['vendor_id' => $request->vendor,'purchase_date'=>$request->purchase,'product_model'=>$request->product,'mac_address'=>$request->mac,'serial_number'=>$request->serial]);
+                ['mac_address'=>$request->mac,'serial_number'=>$request->serial]);
         
         return response()->json(['success'=>'Product saved successfully.']);
     }
