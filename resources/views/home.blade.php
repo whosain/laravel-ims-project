@@ -1,4 +1,4 @@
-  @include('tamplate.headerhome')
+@include('tamplate.headerhome')
 
 <div class="content-wrapper" style="min-height: 1200px;">
     <section class="content">

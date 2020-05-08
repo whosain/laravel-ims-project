@@ -8,6 +8,7 @@
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="{{ asset('asset/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('asset/bootstrap/css/bootstrap.min.css') }}">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -140,10 +141,13 @@
                                 <span class="label label-primary pull-right">4</span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="top-nav.html"><i class="fa fa-circle-o"></i> Master Departemen</a></li>
-                                <li><a href="boxed.html"><i class="fa fa-circle-o"></i> Master Company</a></li>
-                                <li><a href="fixed.html"><i class="fa fa-circle-o"></i> Master Aplication</a></li>
-                                <li class="active"><a href="collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Master User</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Master Departemen</a></li>
+                                <li><a href="{{ route('company') }}"><i class="fa fa-link"></i><span>Master Company</span></a></li>
+                                <li><a href="{{ route('customers') }}"><i class="fa fa-link"></i><span>Master CustomerSVN</span></a></li>
+                                <li><a href="{{ route('buildings') }}"><i class="fa fa-link"></i><span>Master Customer Building</span></a></li>
+                                <li><a href="{{ route('scnAsets') }}"><i class="fa fa-link"></i><span>Master Aset SCN</span></a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Master Aplication</a></li>
+                                <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Master User</a></li>
                             </ul>
                         </li>
                     </ul>
