@@ -32,56 +32,78 @@
                 <label>SN Perangkat</label>
                 <input type="text" class="form-control" id="sn" name="sn"  placeholder="SN Perangkat">
               </div>
-              <div class="col-md-4">
-                <div class="input-group">
+              <div class="col-md-3">
+                {{-- <div class="input-group"> --}}
                   <label>Tanggal Masuk Perangkat</label>
-                  <div class="input-group">
-                      <input type="text" class="form-control" name="tgl_msk" id="tgl_mske"  placeholder="Recevide Date">
+                  {{-- <div class="input-group"> --}}
+                  <input type="text" class="form-control" name="tgl_msk" id="tgl_mske"  placeholder="Recevide Date">
 
-                      <div class="input-group-addon">
+                      {{-- <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
-                      </div>
-                  </div>
-                </div> 
+                      </div> --}}
+                  {{-- </div> --}}
+                {{-- </div>  --}}
               </div>
             </div>
             <div class="form-group has-feedback">
               <div class="col-md-4">
-                <label>Lokasi Perangkat</label>
+                <label>PIC Install</label>
                 {{-- <Input type="text" name="sitename" id="sitename" readonly class="form-control input-sm" value="" required> --}}
-                <select name="sitename" id="sitename" class="form-control input-xs" required placeholder="Jenis Perangkat">
-                  <option value="">Pilih Lokasi Perangkat</option>
-                    @foreach($datalokasi as $item)
+                <select name="picinstall" id="picinstalle" class="form-control input-xs" required placeholder="Jenis Perangkat">
+                    <option value="">Pilih</option>  
+                  {{-- @foreach($datalokasi as $item)
                       <option value="{{$item->siteid}}">{{$item->sitename}}</option>
-                    @endforeach
+                    @endforeach --}}
+                    <option value="Gunawan">Gunawan</option>
+                    <option value="Helmi">Helmi</option>
+                    <option value="Haekal">Haekal</option>
+                    <option value="Dikdo">Dikdo</option>
                 </select> 
               </div>
+              <div class="col-md-3">
+                {{-- <div class="input-group"> --}}
+                  <label>Tanggal Install</label>
+                  {{-- <div class="input-group"> --}}
+                      <input type="text" class="form-control" name="tglinstall" id="tglinstalle"  placeholder="Recevide Date">
+
+                      {{-- <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                      </div> --}}
+                  {{-- </div> --}}
+                {{-- </div>  --}}
+              </div>
               <div class="col-md-4">
-                <label>Lokasi Perangkat</label>
+                <label>PIC Dismantle</label>
                 {{-- <Input type="text" name="sitename" id="sitename" readonly class="form-control input-sm" value="" required> --}}
-                <select name="sitename" id="sitename" class="form-control input-xs" required placeholder="Jenis Perangkat">
-                  <option value="">Pilih Lokasi Perangkat</option>
-                    @foreach($datalokasi as $item)
+                <select name="picdismantle" id="pic_dismantle" class="form-control input-xs" required placeholder="Jenis Perangkat">
+                  {{-- <option value="">Pilih</option>     --}}
+                  {{-- @foreach($datalokasi as $item)
                       <option value="{{$item->siteid}}">{{$item->sitename}}</option>
-                    @endforeach
+                    @endforeach --}}
+                    <option value="Gunawan">Gunawan</option>
+                    <option value="Helmi">Helmi</option>
+                    <option value="Haekal">Haekal</option>
+                    <option value="Dikdo">Dikdo</option>
                 </select> 
+                {{-- <input type="hidden" class="form-control input-sm" id="customno" name="customno" readonly required value="" placeholder="Customer No" />
+                <input type="hidden" class="form-control input-sm" id="siteid"name="siteid" required placeholder="Site Id" />                --}}
               </div>
-              <div class="col-md-4">
-                <label class="input-group locaset" >Lokasi Aset</label><!--Internal -->
-                <select name="sitename" id="sitename" class="form-control input-xs" required placeholder="Jenis Perangkat">
-                  <option value="">Pilih Lokasi Aset</option>
-                    @foreach($datalokasi as $item)
-                      <option value="{{$item->siteid}}">{{$item->location}}</option>
-                    @endforeach
-                </select> 
-                {{-- <input type="text" class="form-control input-sm lokaset" readonly width="100%" id="lokaset" name="location" required value="" placeholder="Input Lokasi"  /><!--Internal --> --}}
-                <input type="hidden" class="form-control input-sm" id="customno" name="customno" readonly required value="" placeholder="Customer No" />
-                <input type="hidden" class="form-control input-sm" id="siteid"name="siteid" required placeholder="Site Id" />
+              <div class="col-md-3">
+                {{-- <div class="input-group"> --}}
+                  <label>Tanggal Dismantle</label>
+                  {{-- <div class="input-group"> --}}
+                      <input type="text" class="form-control" name="tgldismantle" id="tgldismantles"  placeholder="Recevide Date">
+
+                      {{-- <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                      </div> --}}
+                  {{-- </div> --}}
+                {{-- </div>  --}}
               </div>
-              <div class="col-md-4">
+              {{-- <div class="col-md-4">
                 <label>Keterangan</label>
                 <textarea type="text" class="form-control" id="keterangan" name="keterangan"  placeholder="keterangan"></textarea>
-              </div>
+              </div> --}}
             </div>
         </form>
         <div class="box-footer">

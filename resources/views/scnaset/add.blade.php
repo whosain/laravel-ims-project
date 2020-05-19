@@ -13,7 +13,7 @@
           <div class="col-xs-12">
               <div class="col-xs-3">                  
                   <label>Jenis Perangkat</label>
-                  <select name="jenisname" id="description" class="form-control input-xs" required placeholder="Jenis Perangkat">
+                  <select name="jenisname" id="jenisname" class="form-control input-xs" required placeholder="Jenis Perangkat">
                   <option value="">Pilih Jenis Perangkat</option>
                     @foreach($datajenis as $item)
                       <option value="{{$item->jenisid}}">{{$item->description}}</option>
@@ -47,37 +47,66 @@
                         <i class="fa fa-calendar"></i>
                       </div>
                   </div>
-          </br>
-
-          <button type="button" name='add' id="add" class="btn btn-primary" >Add Aset</button>
+                 
               </div>
           <div class="col-xs-3">
-              <label>Lokasi Perangkat</label>
+              <label>PIC Install</label>
               {{-- <Input type="text" name="sitename" id="sitename" readonly class="form-control input-sm" value="" required> --}}
-              <select name="sitename" id="sitename" class="form-control input-xs" required placeholder="Jenis Perangkat">
-                <option value="">Pilih Lokasi Perangkat</option>
-                  @foreach($datalokasi as $item)
-                    <option value="{{$item->siteid}}">{{$item->sitename}}</option>
-                  @endforeach
+              <select name="picinstall" id="picinstall" class="form-control input-xs" required>
+                <option value="">Pilih</option>
+                <option value="Gunawan">Gunawan</option>
+                <option value="Helmi">Helmi</option>
+                <option value="Haekal">Haekal</option>
+                <option value="Dikdo">Dikdo</option>
+                  {{-- @foreach($datainstall as $item)
+                    <option value="{{$item->id}}">{{$item->pic_install}}</option>
+                  @endforeach --}}
               </select>  
-          </div>    
+          </div>
           <div class="col-xs-3">
-              <label class="input-group locaset" >Lokasi Aset</label><!--Internal -->
-              <select name="sitename" id="sitename" class="form-control input-xs" required placeholder="Jenis Perangkat">
-                <option value="">Pilih Lokasi Aset</option>
-                  @foreach($datalokasi as $item)
-                    <option value="{{$item->siteid}}">{{$item->location}}</option>
-                  @endforeach
+            <label>Tanggal Install</label>
+            <div class="input-group">
+                <input name="tglinstall" id="tglinstall" required readonly placeholder="Tanggal Install" class="form-control input-xs" type="text">
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </div>
+            </div>
+        </div>    
+          <div class="col-xs-3">
+              <label class="input-group locaset" >PIC Dismantle</label><!--Internal -->
+              <select name="picdismantle" id="picdismantle" class="form-control input-xs" required>
+                <option value="">Pilih</option>
+                <option value="Gunawan">Gunawan</option>
+                <option value="Helmi">Helmi</option>
+                <option value="Haekal">Haekal</option>
+                <option value="Dikdo">Dikdo</option>
+                  {{-- @foreach($datadismental as $item)
+                    <option value="{{$item->id}}">{{$item->pic_dismental}}</option>
+                  @endforeach --}}
               </select> 
               {{-- <input type="text" class="form-control input-sm lokaset" readonly width="100%" id="lokaset" name="location" required value="" placeholder="Input Lokasi"  /><!--Internal --> --}}
               <input type="hidden" class="form-control input-sm" id="customno" name="customno" readonly required value="" placeholder="Customer No" />
               <input type="hidden" class="form-control input-sm" id="siteid"name="siteid" required placeholder="Site Id" />               
           </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <div class="col-xs-3">
-              <label>Keterangan</label>
-              <textarea name="keterangan" required placeholder="Keterangan" cols="50%" class="form-control"></textarea>
-          </div>
+            <label>Tanggal Dismantle</label>
+            <div class="input-group">
+                <input name="tgldismantle" id="tgldismantle" required readonly placeholder="Tanggal Dismantle" class="form-control input-xs" type="text">
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </div>
+            </div>
+            <br />
+            <button type="button" name='add' id="add" class="btn btn-primary" >Add Aset</button>
+          </div>    
 
+          
+       
         </div>
       </div>
     </form>

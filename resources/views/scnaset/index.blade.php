@@ -24,11 +24,10 @@
                       <th>Merek</th>
                       <th>SN</th>
                       <th>Tanggal Masuk</th>
-                      <th>Lokasi Perangkat</th>
-                      <th>Lokasi Aset</th>
-                      <th>Keterangan</th>
-                      <!-- <th>Kembali</th>
-                      <th>Tanggal Kembali</th> -->
+                      <th>PIC Install</th>
+                      <th>Tanggal Install</th>
+                      <th>PIC Dismantle</th>
+                      <th>Tanggal Dismantle</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -63,24 +62,38 @@
               ajax: "{{ route('showAsets') }}",
               columns: [
                 {data: 'id', name: 'id'},
-                // {data: 'jenisname', name: 'jenisname'},
-                {data: 'description', name: 'description'},
+                {data: 'jenisname', name: 'jenisname'},
                 {data: 'seri', name: 'seri'},
                 {data: 'merk', name: 'merk'},
                 {data: 'sn', name: 'sn'},
-                {data: 'tgl_msk', name: 'tgl_msk'},
-                {data: 'sitename', name: 'sitename'},
-                {data: 'location', name: 'location'},
-                {data: 'keterangan', name: 'keterangan'},
+                {data: 'tglmsk', name: 'tglmsk'},
+                {data: 'pic_install', name: 'pic_install'},
+                {data: 'tglinstall', name: 'tglinstall'},
+                {data: 'pic_dismental', name: 'pic_dismental'},
+                {data: 'tgldismental', name: 'tgldismental'},
                 {data: 'action', name: 'action'}
               ]
           });
+
+          // var date = $('#datepicker').datepicker({ dateFormat: 'dd-mm-yy' }).val();
           
-          $("#tgl_msk").datepicker({
-                dateFormat: "yyyy/mm/dd",
-                autoclose: true,
-                todayHighlight: true,
-            });
+          $( "#tgl_msk").datepicker({
+            dateFormat: 'yy-mm-dd',
+            autoclose: true,
+            todayHighlight: true,
+          });
+
+          $( "#tglinstall" ).datepicker({
+            dateFormat: 'yy-mm-dd',
+            autoclose: true,
+            todayHighlight: true,
+          });
+          
+          $( "#tgldismantle" ).datepicker({
+            dateFormat: 'yy-mm-dd',
+            autoclose: true,
+            todayHighlight: true,
+          });
           
         });
 
@@ -116,23 +129,36 @@
               $('#saveBtn').val("edit-user");
               $('#ajaxModel').modal('show');
               $('#id').val(data.id);
-              $('#jenisname').val(data.description);
-              // $('#description_e').val(data.jenisname);
+              $('#jenisname').val(data.jenisname);
               $('#seri').val(data.seri);
               $('#merk').val(data.merk);
               $('#sn').val(data.sn);
               $('#tgl_mske').val(data.tgl_msk);
-              $('#sitename').val(data.sitename);
-              $('#location').val(data.location);
-              $('#keterangan').val(data.keterangan);
+              $('#picinstalle').val(data.pic_install);
+              $('#tglinstalle').val(data.tgl_install);
+              $('#pic_dismantle').val(data.pic_dismental);
+              $('#tgldismantles').val(data.tgl_dismental);
               
           })
 
-          $("#tgl_mske").datepicker({
-                dateFormat: "yyyy/mm/dd",
-                autoclose: true,
-                todayHighlight: true,
-            });
+          
+          $( "#tgl_mske").datepicker({
+            dateFormat: 'yy-mm-dd',
+            autoclose: true,
+            todayHighlight: true,
+          });
+
+          $( "#tglinstalle" ).datepicker({
+            dateFormat: 'yy-mm-dd',
+            autoclose: true,
+            todayHighlight: true,
+          });
+          
+          $( "#tgldismantles" ).datepicker({
+            dateFormat: 'yy-mm-dd',
+            autoclose: true,
+            todayHighlight: true,
+          });
 
         });
 

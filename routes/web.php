@@ -42,9 +42,10 @@ Route::resource('deleteBuilding','CustomerbuildingController');
 Route::resource('asetView','ScnController');
 Route::get('/scnAsets','ScnController@index')->name('scnAsets');
 Route::get('/showAsets','ScnController@index')->name('showAsets');
-Route::post('/addAset', 'ScnController@store');
+Route::post('/addAset', 'ScnController@insert');
 Route::resource('updateAset','ScnController');
 Route::resource('deleteAset','ScnController');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
