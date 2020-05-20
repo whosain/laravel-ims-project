@@ -49,6 +49,10 @@
                   </div>
                  
               </div>
+          <div class="col-md-3">
+             <label>Lokasi Perangkat</label>
+             <select class="location form-control" name="location" id="location"></select>
+          </div>
           <div class="col-xs-3">
               <label>PIC Install</label>
               {{-- <Input type="text" name="sitename" id="sitename" readonly class="form-control input-sm" value="" required> --}}
@@ -63,6 +67,8 @@
                   @endforeach --}}
               </select>  
           </div>
+          {{-- <br /> --}}
+          {{-- <br />  --}}
           <div class="col-xs-3">
             <label>Tanggal Install</label>
             <div class="input-group">
@@ -71,7 +77,11 @@
                   <i class="fa fa-calendar"></i>
                 </div>
             </div>
-        </div>    
+        </div>
+        <br />
+        <br />    
+        <br />    
+        <br />    
           <div class="col-xs-3">
               <label class="input-group locaset" >PIC Dismantle</label><!--Internal -->
               <select name="picdismantle" id="picdismantle" class="form-control input-xs" required>
@@ -88,11 +98,11 @@
               <input type="hidden" class="form-control input-sm" id="customno" name="customno" readonly required value="" placeholder="Customer No" />
               <input type="hidden" class="form-control input-sm" id="siteid"name="siteid" required placeholder="Site Id" />               
           </div>
+          {{-- <br />
           <br />
           <br />
           <br />
-          <br />
-          <br />
+          <br /> --}}
           <div class="col-xs-3">
             <label>Tanggal Dismantle</label>
             <div class="input-group">
@@ -102,8 +112,11 @@
                 </div>
             </div>
             <br />
-            <button type="button" name='add' id="add" class="btn btn-primary" >Add Aset</button>
-          </div>    
+          </div> 
+          <br />
+          {{-- <br />  --}}
+          <button type="button" name='add' id="add" class="btn btn-primary" >Add Aset</button>
+          
 
           
        

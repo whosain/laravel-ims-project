@@ -45,7 +45,7 @@ Route::get('/showAsets','ScnController@index')->name('showAsets');
 Route::post('/addAset', 'ScnController@insert');
 Route::resource('updateAset','ScnController');
 Route::resource('deleteAset','ScnController');
-
+Route::get('/treckingscn/carilocation', 'ScnController@DataLocation');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

@@ -24,6 +24,7 @@
                       <th>Merek</th>
                       <th>SN</th>
                       <th>Tanggal Masuk</th>
+                      <th>Lokasi Perangkat</th>
                       <th>PIC Install</th>
                       <th>Tanggal Install</th>
                       <th>PIC Dismantle</th>
@@ -47,6 +48,29 @@
 @include('scnaset.edit')
 @include('tamplate.footer')
 <script type="text/javascript">
+
+    $('#location').select2({
+          placeholder: 'Cari Location...',
+          ajax: {
+            url: '/treckingscn/carilocation',
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+              return {
+                results:  $.map(data, function (item) {
+                  return {
+                    text: item.nama_lokasi,
+                    id: item.id
+                  }
+                })
+              };
+            },
+            cache: true
+          }
+        });
+
+
+
    $(document).ready(function() {
     $.ajaxSetup({
           headers: {
@@ -62,11 +86,12 @@
               ajax: "{{ route('showAsets') }}",
               columns: [
                 {data: 'id', name: 'id'},
-                {data: 'jenisname', name: 'jenisname'},
+                {data: 'description', name: 'description'},
                 {data: 'seri', name: 'seri'},
                 {data: 'merk', name: 'merk'},
                 {data: 'sn', name: 'sn'},
                 {data: 'tglmsk', name: 'tglmsk'},
+                {data: 'nama_lokasi', name: 'nama_lokasi'},
                 {data: 'pic_install', name: 'pic_install'},
                 {data: 'tglinstall', name: 'tglinstall'},
                 {data: 'pic_dismental', name: 'pic_dismental'},
@@ -134,6 +159,7 @@
               $('#merk').val(data.merk);
               $('#sn').val(data.sn);
               $('#tgl_mske').val(data.tgl_msk);
+              $('#location').val(data.location);
               $('#picinstalle').val(data.pic_install);
               $('#tglinstalle').val(data.tgl_install);
               $('#pic_dismantle').val(data.pic_dismental);

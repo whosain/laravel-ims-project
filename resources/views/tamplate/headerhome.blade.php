@@ -21,6 +21,9 @@
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="{{ asset('asset/dist/css/skins/_all-skins.min.css') }}">
 
+        {{-- autocomplate --}}
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>

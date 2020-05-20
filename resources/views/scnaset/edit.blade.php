@@ -32,19 +32,26 @@
                 <label>SN Perangkat</label>
                 <input type="text" class="form-control" id="sn" name="sn"  placeholder="SN Perangkat">
               </div>
-              <div class="col-md-3">
+              <div class="col-md-4">
                 {{-- <div class="input-group"> --}}
                   <label>Tanggal Masuk Perangkat</label>
                   {{-- <div class="input-group"> --}}
                   <input type="text" class="form-control" name="tgl_msk" id="tgl_mske"  placeholder="Recevide Date">
 
-                      {{-- <div class="input-group-addon">
-                          <i class="fa fa-calendar"></i>
-                      </div> --}}
-                  {{-- </div> --}}
-                {{-- </div>  --}}
+                    
+              </div>
+              <div class="col-md-4">
+                <label>Lokasi Perangkat</label>
+                <select name="location" id="location" class="form-control input-sm" required >
+                  <option value="">Pilih Lokasi</option>
+                  @foreach($datalokasi as $item)
+                    <option value="{{$item->id}}">{{$item->nama_lokasi}}</option>
+                  @endforeach
+                </select>
+                {{-- <select class="location form-control" name="location" id="location"></select> --}}
               </div>
             </div>
+            
             <div class="form-group has-feedback">
               <div class="col-md-4">
                 <label>PIC Install</label>
@@ -60,7 +67,7 @@
                     <option value="Dikdo">Dikdo</option>
                 </select> 
               </div>
-              <div class="col-md-3">
+              <div class="col-md-4">
                 {{-- <div class="input-group"> --}}
                   <label>Tanggal Install</label>
                   {{-- <div class="input-group"> --}}
@@ -72,6 +79,7 @@
                   {{-- </div> --}}
                 {{-- </div>  --}}
               </div>
+              <br />
               <div class="col-md-4">
                 <label>PIC Dismantle</label>
                 {{-- <Input type="text" name="sitename" id="sitename" readonly class="form-control input-sm" value="" required> --}}
@@ -88,22 +96,18 @@
                 {{-- <input type="hidden" class="form-control input-sm" id="customno" name="customno" readonly required value="" placeholder="Customer No" />
                 <input type="hidden" class="form-control input-sm" id="siteid"name="siteid" required placeholder="Site Id" />                --}}
               </div>
-              <div class="col-md-3">
-                {{-- <div class="input-group"> --}}
-                  <label>Tanggal Dismantle</label>
-                  {{-- <div class="input-group"> --}}
-                      <input type="text" class="form-control" name="tgldismantle" id="tgldismantles"  placeholder="Recevide Date">
-
-                      {{-- <div class="input-group-addon">
-                          <i class="fa fa-calendar"></i>
-                      </div> --}}
-                  {{-- </div> --}}
-                {{-- </div>  --}}
-              </div>
+             
               {{-- <div class="col-md-4">
                 <label>Keterangan</label>
                 <textarea type="text" class="form-control" id="keterangan" name="keterangan"  placeholder="keterangan"></textarea>
               </div> --}}
+            </div>
+            <div class="form-group has-feedback">
+              <div class="col-md-3">
+                  <label>Tanggal Dismantle</label>
+                      <input type="text" class="form-control" name="tgldismantle" id="tgldismantles"  placeholder="Recevide Date">
+
+              </div>
             </div>
         </form>
         <div class="box-footer">
