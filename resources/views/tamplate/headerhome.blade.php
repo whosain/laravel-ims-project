@@ -19,6 +19,10 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="{{ asset('asset/dist/css/skins/_all-skins.min.css') }}">
+        <link href="{{ asset('asset/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -137,13 +141,29 @@
                             <a href="#">
                                 <i class="fa fa-files-o"></i>
                                 <span>Master</span>
-                                <span class="label label-primary pull-right">4</span>
+                                <span class="label label-primary pull-right"></span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="top-nav.html"><i class="fa fa-circle-o"></i> Master Departemen</a></li>
-                                <li><a href="boxed.html"><i class="fa fa-circle-o"></i> Master Company</a></li>
-                                <li><a href="fixed.html"><i class="fa fa-circle-o"></i> Master Aplication</a></li>
-                                <li class="active"><a href="collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Master User</a></li>
+                                <li><a href="{{ url('/jenis') }}"><i class="fa fa-circle-o"></i> Master Jenis</a></li>
+                                <li><a href="{{ url('/lokasi') }}"><i class="fa fa-circle-o"></i> Master Lokasi</a></li>
+                                <li><a href="{{ url('/vendor') }}"><i class="fa fa-circle-o"></i> Master Vendor</a></li>
+                                <li><a href="{{ route('company') }}"><i class="fa fa-link"></i><span>Master Company</span></a></li>
+                                <li><a href="{{ route('customers') }}"><i class="fa fa-link"></i><span>Master CustomerSVN</span></a></li>
+                                <li><a href="{{ route('buildings') }}"><i class="fa fa-link"></i><span>Master Customer Building</span></a></li>
+                                <li><a href="collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Master User</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview active">
+                            <a href="#">
+                                <i class="fa fa-server"></i>
+                                <span>Asset</span>
+                                <span class="label label-primary pull-right"></span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Asset Atlasat</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Asset SCN</a></li>
+                                <li><a href="{{ url('/stb') }}"><i class="fa fa-circle-o"></i> Asset STB</a></li>
+                                <li><a href="{{ url('/treckingstb') }}"><i class="fa fa-circle-o"></i> Tracking STB</a></li>
                             </ul>
                         </li>
                     </ul>
