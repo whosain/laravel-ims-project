@@ -12,7 +12,7 @@
               <div class="col-md-4">
                 <label>Jenis Perangkat</label>
                 <select name="jenisname" id="jenisname" class="form-control input-sm" required >
-                  <option value="">Select One...</option>
+                  {{-- <option value="">Select One...</option> --}}
                   @foreach($datajenis as $item)
                     <option value="{{$item->jenisid}}">{{$item->description}}</option>
                   @endforeach
@@ -43,7 +43,7 @@
               <div class="col-md-4">
                 <label>Lokasi Perangkat</label>
                 <select name="location" id="location" class="form-control input-sm" required >
-                  <option value="">Pilih Lokasi</option>
+                  {{-- <option value="">Pilih Lokasi</option> --}}
                   @foreach($datalokasi as $item)
                     <option value="{{$item->id}}">{{$item->nama_lokasi}}</option>
                   @endforeach

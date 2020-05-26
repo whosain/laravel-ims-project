@@ -28,7 +28,7 @@ Route::resource('deleteCompany','CompanyController');
 Route::resource('customerView','CustomerSvnController');
 Route::get('/customers','CustomerSvnController@index')->name('customers');
 Route::get('/showCustomers','CustomerSvnController@index')->name('showCustomers');
-Route::post('/addCustomer', 'CustomerSvnController@store');
+Route::post('/addCustomer', 'CustomerSvnController@insert');
 Route::resource('updateCustomer','CustomerSvnController');
 Route::resource('deleteCustomer','CustomerSvnController');
 

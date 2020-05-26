@@ -24,11 +24,23 @@ class CustomerSvnController extends Controller
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-   
-                        $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="btn btn-primary btn-xs editCustomer"><i class="glyphicon glyphicon-edit"></i>Edit</a>';
-   
-                        $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-xs deleteCustomer"><i class="glyphicon glyphicon-trash"></i>Delete</a>';
      
+                        $btn = '<div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-sm editCustomer">Edit</a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-sm deleteCustomer">Delete</a>
+                            </li>
+                        </ul>
+                        </div>';
+
                         return $btn;
                     })
                     ->rawColumns(['action'])
@@ -44,9 +56,23 @@ class CustomerSvnController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function insert(Request $request)
     {
         //
+        $data =  new CustomerSvn();
+        $data->company_id = $request->company;
+        $data->name=$request->customer_name;
+        $data->name_short=$request->customer_short;
+        $data->phone=$request->phone;
+        $data->address=$request->address;
+        $data->notes=$request->note;
+
+        $data->save();
+
+        return response()->json([
+            'success'    => true,
+            'message'    => 'Customer Created'
+        ]);
     }
 
     /**
@@ -57,14 +83,18 @@ class CustomerSvnController extends Controller
      */
     public function store(Request $request)
     {
-        CustomerSvn::updateOrCreate(['id' => $request->id],
-        ['company_id' => $request->company,
+           
+        DB::table('master_customer_svn')
+        ->where('id',$request->id)
+        ->update(
+        [
+        'company_id' => $request->company,
         'name'=>$request->customer_name,
         'name_short'=>$request->customer_short,
         'phone'=>$request->phone,
         'address'=>$request->address,
         'notes'=>$request->note
-        ]);        
+        ]);       
    
         return response()->json([
             'success'    => true,

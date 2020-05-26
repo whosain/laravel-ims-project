@@ -22,10 +22,26 @@ class CustomerBuildingController extends Controller
                     ->addIndexColumn()
                     ->addColumn('action', function($building){
    
-                        $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$building->id.'" data-original-title="Edit" class="btn btn-primary btn-xs editBuilding"><i class="glyphicon glyphicon-edit"></i>Edit</a>';
+                        // $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$building->id.'" data-original-title="Edit" class="btn btn-primary btn-xs editBuilding"><i class="glyphicon glyphicon-edit"></i>Edit</a>';
    
-                        $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$building->id.'" data-original-title="Delete" class="btn btn-danger btn-xs deleteBuilding"><i class="glyphicon glyphicon-trash"></i>Delete</a>';
+                        // $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$building->id.'" data-original-title="Delete" class="btn btn-danger btn-xs deleteBuilding"><i class="glyphicon glyphicon-trash"></i>Delete</a>';
      
+                        $btn = '<div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$building->id.'" data-original-title="Edit" class="edit btn btn-sm editBuilding">Edit</a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$building->id.'" data-original-title="Delete" class="btn btn-sm deleteBuilding">Delete</a>
+                            </li>
+                        </ul>
+                        </div>';
+
                         return $btn;
                     })
                     ->rawColumns(['action'])

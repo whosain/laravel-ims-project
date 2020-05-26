@@ -22,11 +22,23 @@ class CompanyController extends Controller
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($company){
-   
-                        $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$company->id.'" data-original-title="Edit" class="btn btn-primary btn-xs editCompany"><i class="glyphicon glyphicon-edit"></i>Edit</a>';
-   
-                        $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$company->id.'" data-original-title="Delete" class="btn btn-danger btn-xs deleteCompany"><i class="glyphicon glyphicon-trash"></i>Delete</a>';
-     
+
+                        $btn = '<div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$company->id.'" data-original-title="Edit" class="edit btn btn-sm editCompany">Edit</a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$company->id.'" data-original-title="Delete" class="btn btn-sm deleteCompany">Delete</a>
+                            </li>
+                        </ul>
+                    </div>';
+
                         return $btn;
                     })
                     ->rawColumns(['action'])
