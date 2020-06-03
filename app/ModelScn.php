@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelScn extends Model
 {
-    protected $table = "master_aset";
+    protected $table = "master_aset_scn";
     // const CREATED_AT = 'create_at';
     // const UPDATED_AT = 'update_at';
     public $timestamps = false;
