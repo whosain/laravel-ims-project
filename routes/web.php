@@ -33,7 +33,7 @@ Route::resource('updateCustomer','CustomerSvnController');
 Route::resource('deleteCustomer','CustomerSvnController');
 
 Route::resource('buildingView','CustomerbuildingController');
-Route::get('/buildings','CustomerbuildingController@index')->name('buildings');
+Route::get('/buildings','CustomerBuildingController@index')->name('buildings');
 Route::get('/showBuildings','CustomerbuildingController@index')->name('showBuildings');
 Route::post('/addBuilding', 'CustomerbuildingController@store');
 Route::resource('updateBuilding','CustomerbuildingController');

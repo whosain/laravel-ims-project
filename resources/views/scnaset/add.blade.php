@@ -97,10 +97,12 @@
               {{-- <input type="text" class="form-control input-sm lokaset" readonly width="100%" id="lokaset" name="location" required value="" placeholder="Input Lokasi"  /><!--Internal --> --}}
               <input type="hidden" class="form-control input-sm" id="customno" name="customno" readonly required value="" placeholder="Customer No" />
               <input type="hidden" class="form-control input-sm" id="siteid"name="siteid" required placeholder="Site Id" />               
+         
+              <br />
+              <button type="button" name='add' id="add" class="btn btn-primary" >Add Aset</button>
           </div>
           {{-- <br />
-          <br />
-          <br />
+    
           <br />
           <br /> --}}
           <div class="col-xs-3">
@@ -115,7 +117,7 @@
           </div> 
           <br />
           {{-- <br />  --}}
-          <button type="button" name='add' id="add" class="btn btn-primary" >Add Aset</button>
+          
           
 
           

@@ -147,7 +147,7 @@
                                 <li><a href="#"><i class="fa fa-circle-o"></i> Master Departemen</a></li>
                                 <li><a href="{{ route('company') }}"><i class="fa fa-link"></i><span>Master Company</span></a></li>
                                 <li><a href="{{ route('customers') }}"><i class="fa fa-link"></i><span>Master CustomerSVN</span></a></li>
-                                <li><a href="{{ route('buildings') }}"><i class="fa fa-link"></i><span>Master Customer Building</span></a></li>
+                                <li><a href="{{ url('/buildings') }}"><i class="fa fa-link"></i><span>Master Customer Building</span></a></li>
                                 <li><a href="{{ route('scnAsets') }}"><i class="fa fa-link"></i><span>Master Aset SCN</span></a></li>
                                 <li><a href="#"><i class="fa fa-circle-o"></i> Master Aplication</a></li>
                                 <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Master User</a></li>

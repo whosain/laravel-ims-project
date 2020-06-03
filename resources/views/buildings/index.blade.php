@@ -11,9 +11,9 @@
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
               </div>
             </div>
-            <div class="box-body" style="display: block;">
-              
-                <table id="table" class="table table-striped">
+            
+            <div class="table table-bordered table-hover" style="background:#eeeeee;">
+              <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                   <thead>
                     <tr>
                       <th>ID</th>
